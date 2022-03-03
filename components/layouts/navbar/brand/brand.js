@@ -1,18 +1,19 @@
 import { Text } from "@mantine/core"
 import Image from "next/image"
+import logo  from "../../../../public/images/KRESTON-CSM-LOGO.jpg"
 
 
 const Brand = () => {
   return (
-    <div>
-        {/* <Image
+    <div style={{marginLeft:'20px',marginTop:'15px'}}>
+        <Image
             // src="/images/logo.png"
-            src="http://via.placeholder.com/150.jpg"
+            src={logo}
             alt="Logo"
             width={150}
-            height={150}
-        /> */}
-        <Text>Kreston CSM</Text>
+            height={100}
+        />
+        {/* <Text>Kreston CSM</Text> */}
     </div>
   )
 }

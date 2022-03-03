@@ -14,7 +14,6 @@ import {
 const PopOverComponent = ({opened,setOpened,Icon,values,component,theme}) => {
 
     const onSubmit=(values) => {
-        console.log(values);
         setOpened(false);
     }
     const onCancel= () => setOpened(false);

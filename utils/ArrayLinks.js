@@ -38,7 +38,7 @@ export const AdminLinks = [
         }
     },
     {   
-        link: '/independencia',  
+        link: '/independencias',  
         ComponentProps:{ 
             sx:{
                 display: 'flex',
@@ -53,19 +53,51 @@ export const AdminLinks = [
         }
     },
     {   
-        link: '/consultas',  
-        ComponentProps:{ 
-            sx:{
-                display: 'flex',
-                justifyContent: 'flex-start',
-                borderRadius: '50px',
-                margin:'10px 0',
+        text: 'Consultas',
+        icon: <FiInfo />,
+        accordion:true,
+        accordionLinks:[
+            {link: '/consultas/aprobadas',
+                ComponentProps:{ 
+                    text:' Aprobadas',
+                    variant:"subtle",
+                    fullWidth: true,
+                    sx:{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        borderRadius: '50px',
+                        margin:'10px 0',
+                    }
+                }
             },
-            text: 'Consultas',
-            icon: <FiInfo />,
-            variant:"subtle",
-            fullWidth: true
-        }
+            {link: '/consultas/rechazadas',
+                ComponentProps:{ 
+                    text:' Rechazadas',
+                    variant:"subtle",
+                    fullWidth: true,
+                    sx:{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        borderRadius: '50px',
+                        margin:'10px 0',
+                    }
+                }
+            },
+            {link: '/consultas/espera',
+                ComponentProps:{ 
+                    text:' En espera',
+                    variant:"subtle",
+                    fullWidth: true,
+                    sx:{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        borderRadius: '50px',
+                        margin:'10px 0',
+                    }
+                }
+            },
+        ]
+        
     },
     {   
         link: '/usuarios',  

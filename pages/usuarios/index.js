@@ -6,23 +6,25 @@ import UserPopOverForm from '../../components/forms/popOverForm';
 import PopOverComponent from '../../components/forms/popOverComponent';
 import ModalComponent from '../../components/modals/ModalComponent';
 import CustomLink from '../../components/links/CustomLink';
+import CreateUserForm from '../../components/forms/CreateUserForm';
 
-
+const elements = [
+  { id:1,nombre: 'Marco Carrillo', correo: "email@email.com", rol: 'Admin', telefono: 1234567890 },
+  { id:2,nombre: 'Saulo Lomelí', correo: "email@email.com", rol: 'Auditor', telefono: 1234567890 },
+  { id:3,nombre: 'Aracely Flores', correo: "email@email.com", rol: 'Contador', telefono: 1234567890 },
+  { id:4,nombre: 'Giovanni Flores', correo: "email@email.com", rol: 'Admin', telefono: 1234567890 },
+  { id:5,nombre: 'Mónica Zermeño', correo: "email@email.com", rol: 'Contador', telefono: 1234567890 },
+];
 
 
 const UsuariosIndex = () => {
     const [values, setValues] = useState({ name: 'Bob Handsome', email: 'bob@handsome.inc' });
+    const [Form, setForm] = useState(elements);
     const [opened, setOpened] = useState(false);
     const [openedModal, setOpenedModal] = useState(false);
     const theme = useMantineTheme();
 
-    const elements = [
-        { id:1,nombre: 'Marco Carrillo', correo: "email@email.com", rol: 'Admin', telefono: 1234567890 },
-        { id:2,nombre: 'Saulo Lomelí', correo: "email@email.com", rol: 'Auditor', telefono: 1234567890 },
-        { id:3,nombre: 'Aracely Flores', correo: "email@email.com", rol: 'Contador', telefono: 1234567890 },
-        { id:4,nombre: 'Giovanni Flores', correo: "email@email.com", rol: 'Admin', telefono: 1234567890 },
-        { id:5,nombre: 'Mónica Zermeño', correo: "email@email.com", rol: 'Contador', telefono: 1234567890 },
-      ];
+    
 
     const ths = (
         <tr>
@@ -34,7 +36,7 @@ const UsuariosIndex = () => {
         </tr>
       );
 
-      const rows = elements.map((element) => (
+      const rows = Form.map((element) => (
         <tr key={element.id}>
           <td>{element.nombre}</td>
           <td>{element.correo}</td>
@@ -71,15 +73,10 @@ const UsuariosIndex = () => {
             opened={openedModal}
             setOpened={setOpenedModal}
             title="Agregar usuario"
-            Component={UserPopOverForm}
+            Component={CreateUserForm}
             componentProps={{
-                initialValues: values,
-                onSubmit: (values) => {
-                  setValues(values);
-                  setOpenedModal(false);
-                },
-                onCancel: () => setOpened(false)
-
+                setForm,
+                Form
             }}
         />
         <Card>
