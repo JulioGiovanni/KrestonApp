@@ -32,8 +32,8 @@ const Links = () => {
                             /> 
                         :
                             <CustomLink
-                                style={{}}
                                 key={link.link}
+                                style={{}}
                                 href={link.link}
                                 Component={CustomButton}
                                 ComponentProps={link.ComponentProps}

@@ -1,4 +1,3 @@
-import { Text } from "@mantine/core"
 import Image from "next/image"
 import logo  from "../../../../public/images/KRESTON-CSM-LOGO.jpg"
 

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Header, MediaQuery,Burger, useMantineTheme } from "@mantine/core";
 
-import MenuNavbar from "../navbar/menu-navbar/menuNavbar"
-import Brand from "../navbar/brand/brand"
+import MenuNavbar from "../navbar/menu-navbar/MenuNavbar"
+import Brand from "../navbar/brand/Brand"
 
 
-const customHeader = (props) => {
+const CustomHeader = (props) => {
     const [opened, setOpened] = useState(false);
     const theme = useMantineTheme();
   return (
@@ -28,4 +28,4 @@ const customHeader = (props) => {
   )
 }
 
-export default customHeader
+export default CustomHeader

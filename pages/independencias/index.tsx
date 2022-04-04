@@ -1,6 +1,6 @@
 import { Card, Tabs } from '@mantine/core'
-import Anual from '../../components/AppComponents/anual'
-import Proyectos from '../../components/AppComponents/proyectos'
+import Anual from '../../components/AppComponents/Anual'
+import Proyectos from '../../components/AppComponents/Proyectos'
 
 
 

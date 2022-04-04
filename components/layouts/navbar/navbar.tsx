@@ -1,8 +1,10 @@
 import { AppShell, Burger, Container, Header, MediaQuery, Navbar,ScrollArea, Space, useMantineTheme } from "@mantine/core"
 import { useState } from "react"
-import Links from "../../links/links"
-import Brand from "./brand/brand"
-import MenuNavbar from "./menu-navbar/menuNavbar"
+import Links from "../../links/Links"
+import Brand from "./brand/Brand"
+
+
+import MenuNavbar from "./menu-navbar/MenuNavbar"
 
 
 const CustomNavbar = ({children}) => {

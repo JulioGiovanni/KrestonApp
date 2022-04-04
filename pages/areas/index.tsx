@@ -3,8 +3,9 @@ import { FiPlus } from "react-icons/fi";
 import { Avatar, Button, Card, Grid, Space, Text, Title } from "@mantine/core";
 import Link from "next/link";
 import { useState } from "react";
-import UserPopOverForm from "../../components/forms/popOverForm";
+
 import ModalComponent from "../../components/modals/ModalComponent";
+import UserPopOverForm from '../../components/forms/PopOverForm';
 const areas = [
     {nombre: 'Auditoría',   id: 1, oficina:'GDL'},
     {nombre: 'Auditoría',   id: 2, oficina:'CDJ'},

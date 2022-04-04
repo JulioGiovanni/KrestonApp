@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { ActionIcon, Button, Card, Group, Space, Table, Text, Title, useMantineTheme } from '@mantine/core';
 import { useState } from 'react';
 import { FiEdit, FiPlus,FiEye} from "react-icons/fi";
-import UserPopOverForm from '../../components/forms/popOverForm';
-import PopOverComponent from '../../components/forms/popOverComponent';
+import UserPopOverForm from '../../components/forms/PopOverForm';
+
 import ModalComponent from '../../components/modals/ModalComponent';
-import CustomLink from '../../components/links/CustomLink';
 import CreateUserForm from '../../components/forms/CreateUserForm';
+import PopOverComponent from '../../components/forms/popOverComponent';
 
 const elements = [
   { id:1,nombre: 'Marco Carrillo', correo: "email@email.com", rol: 'Admin', telefono: 1234567890 },
@@ -44,14 +44,19 @@ const UsuariosIndex = () => {
           <td>{element.telefono}</td>
           <td>
             <Group>
+
+              {/* Edit Component */}
               <PopOverComponent
                   opened={opened}
                   setOpened={setOpened}
                   Icon={FiEdit}
                   values={values}
-                  component={UserPopOverForm}
+                  Component={UserPopOverForm}
                   theme={theme}
               />
+              {/* End Edit Component */}
+
+              {/* Delete Component */}
               <Link href={`/usuarios/${element.id}`} passHref> 
                 <ActionIcon 
                   variant={theme.colorScheme === 'dark' ? 'hover' : 'light'}
@@ -60,6 +65,8 @@ const UsuariosIndex = () => {
                   <FiEye />
                 </ActionIcon>
               </Link>
+              {/* End Delete Component */}
+
             </Group>
           </td>
         </tr>
@@ -70,14 +77,14 @@ const UsuariosIndex = () => {
   return (
       <>
         <ModalComponent
-            opened={openedModal}
-            setOpened={setOpenedModal}
-            title="Agregar usuario"
-            Component={CreateUserForm}
-            componentProps={{
-                setForm,
-                Form
-            }}
+          opened={openedModal}
+          setOpened={setOpenedModal}
+          title="Agregar usuario"
+          Component={CreateUserForm}
+          componentProps={{
+            setForm,
+            Form
+          }}
         />
         <Card>
             <div style={{display:'flex', justifyContent:'space-between'}}>

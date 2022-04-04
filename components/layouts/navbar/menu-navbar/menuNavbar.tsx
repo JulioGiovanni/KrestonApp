@@ -1,6 +1,7 @@
 import { Group, Menu,Text,Divider} from "@mantine/core"
-import { menuItems } from "./menuItems"
 import UserButton from "./userButton"
+
+
 
 
 
