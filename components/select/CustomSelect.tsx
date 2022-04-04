@@ -1,9 +1,15 @@
-import { forwardRef } from 'react';
+import { forwardRef, LegacyRef } from 'react';
 import { Avatar, Group,Text } from "@mantine/core";
 
 
+interface Props {
+  image,
+  label,
+  description,
+}
+
 const AutoCompleteItem = forwardRef(
-    ({ image, label, description, ...others }, ref) => (
+    ({ image, label, description, ...others }: Props, ref:LegacyRef<HTMLDivElement>) => (
       <div ref={ref} {...others}>
         <Group noWrap>
           <Avatar src={image} />

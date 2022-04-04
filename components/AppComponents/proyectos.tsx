@@ -45,7 +45,7 @@ const Proyectos = () => {
         <div style={{display:'flex',justifyContent:'space-evenly' }}>
             <Select
                 style={{width:'250px'}}
-                value={selects.proyecto}
+                value={selects.values.proyecto}
                 onChange={(e) => selects.setFieldValue('proyecto', e)}
 
                 label="Escoge uno de los proyectos"
@@ -66,7 +66,7 @@ const Proyectos = () => {
             
                 <Select
                     style={{width:'250px'}}
-                    value={selects.anual}
+                    value={selects.values.anual}
                     onChange={(e) => selects.setFieldValue('anual', e)}
                     label="Escoge uno año"
                     placeholder="Años"
@@ -86,7 +86,7 @@ const Proyectos = () => {
             
                 <Select
                     
-                    value={selects.area}
+                    value={selects.values.area}
                     onChange={(e) => selects.setFieldValue('area', e)}
                     style={{width:'250px'}}
                     label="Escoge un área"

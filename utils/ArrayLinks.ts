@@ -1,6 +1,5 @@
 
-
-import { FiCheck,FiHome,FiUser,FiFolder,FiSquare,FiInfo } from "react-icons/fi";
+import { FiCheck,FiHome,FiUser,FiFolder,FiSquare,FiInfo } from "react-Icons/fi";
 
 export const AdminLinks = [
     {   
@@ -17,7 +16,7 @@ export const AdminLinks = [
             },
 
             text: 'Inicio',
-            icon: <FiHome />,
+            Icon:  FiHome, 
             variant:"subtle",
             fullWidth: true
         }
@@ -32,13 +31,13 @@ export const AdminLinks = [
                 margin:'10px 0',
             },
             text: 'Aceptación',
-            icon: <FiCheck />,
+            Icon:  FiCheck,
             variant:"subtle",
             fullWidth: true
         }
     },
     {   
-        link: '/independencia',  
+        link: '/independencias',  
         ComponentProps:{ 
             sx:{
                 display: 'flex',
@@ -47,25 +46,57 @@ export const AdminLinks = [
                 margin:'10px 0',
             },
             text: 'Independencia',
-            icon: <FiFolder />,
+            Icon:  FiFolder ,
             variant:"subtle",
             fullWidth: true
         }
     },
     {   
-        link: '/consultas',  
-        ComponentProps:{ 
-            sx:{
-                display: 'flex',
-                justifyContent: 'flex-start',
-                borderRadius: '50px',
-                margin:'10px 0',
+        text: 'Consultas',
+        icon:  FiInfo ,
+        accordion:true,
+        accordionLinks:[
+            {link: '/consultas/aprobadas',
+                ComponentProps:{ 
+                    text:' Aprobadas',
+                    variant:"subtle",
+                    fullWidth: true,
+                    sx:{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        borderRadius: '50px',
+                        margin:'10px 0',
+                    }
+                }
             },
-            text: 'Consultas',
-            icon: <FiInfo />,
-            variant:"subtle",
-            fullWidth: true
-        }
+            {link: '/consultas/rechazadas',
+                ComponentProps:{ 
+                    text:' Rechazadas',
+                    variant:"subtle",
+                    fullWidth: true,
+                    sx:{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        borderRadius: '50px',
+                        margin:'10px 0',
+                    }
+                }
+            },
+            {link: '/consultas/espera',
+                ComponentProps:{ 
+                    text:' En espera',
+                    variant:"subtle",
+                    fullWidth: true,
+                    sx:{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        borderRadius: '50px',
+                        margin:'10px 0',
+                    }
+                }
+            },
+        ]
+        
     },
     {   
         link: '/usuarios',  
@@ -77,7 +108,7 @@ export const AdminLinks = [
                 margin:'10px 0',
             },
             text: 'Usuarios',
-            icon: <FiUser />,
+            Icon:  FiUser ,
             variant:"subtle",
             fullWidth: true
         }
@@ -92,7 +123,7 @@ export const AdminLinks = [
                 margin:'10px 0',
             },
             text: 'Áreas',
-            icon: <FiSquare />,
+            Icon:  FiSquare ,
             variant:"subtle",
             fullWidth: true
         }

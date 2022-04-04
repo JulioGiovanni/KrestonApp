@@ -1,14 +1,27 @@
-import { Button, UnstyledButton, useMantineTheme } from '@mantine/core'
+import { Button, ButtonVariant, UnstyledButton, useMantineTheme } from '@mantine/core'
 import React from 'react'
 
-const CustomButton = ({text,icon,variant,buttonStyle,fullWidth,sx,active}) => {
+interface Props {
+    text:string,
+    icon:any,
+    variant?:ButtonVariant,
+    buttonStyle?:any,
+    fullWidth?:boolean,
+    sx?:any,
+    active?:boolean,
+}
+
+
+const CustomButton = (props:Props) => {
+    const {text,icon,variant,buttonStyle,fullWidth,sx,active} = props;
+
     const theme = useMantineTheme()
   return (
     <Button 
         style={buttonStyle && buttonStyle } 
-        variant={variant && variant}
+        variant={variant }
         fullWidth={fullWidth ? true : false}
-        leftIcon={icon && icon}
+        leftIcon={icon}
         sx={{...sx,
             backgroundColor: active ? theme.colors.indigo[5] : '',
             color: active ? 'white' : '',

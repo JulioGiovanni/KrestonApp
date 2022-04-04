@@ -1,11 +1,16 @@
-import { forwardRef } from 'react';
+import { forwardRef, Ref } from 'react';
 import { ChevronRightIcon } from '@modulz/radix-icons';
 import { Group, Avatar, Text, UnstyledButton } from '@mantine/core';
 
-
+interface Props {
+  image, 
+  name, 
+  email, 
+  icon?
+}
 
 const UserButton = forwardRef(
-  ({ image, name, email, icon, ...others }, ref) => (
+  ({ image, name, email, icon, ...others }: Props, ref:Ref<HTMLButtonElement>) => (
     
     <UnstyledButton
       ref={ref}

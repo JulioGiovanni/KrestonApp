@@ -30,7 +30,7 @@ const index = () => {
                 onSubmit: () => {
                   setOpenedModal(false);
                 },
-                onCancel: () => setOpened(false)
+                onCancel: () => setOpenedModal(false)
 
             }}
         />

@@ -3,6 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import loginImage from '../public/images/login-image.png';
 
+
+
+
+
 const login = () => {
   return (
     <Center style={{marginTop:'150px', backgroundColor:'#F1F3F5'}}>
