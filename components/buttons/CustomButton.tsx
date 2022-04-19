@@ -3,7 +3,7 @@ import React from 'react'
 
 interface Props {
     text:string,
-    icon:any,
+    Icon:any,
     variant?:ButtonVariant,
     buttonStyle?:any,
     fullWidth?:boolean,
@@ -13,15 +13,15 @@ interface Props {
 
 
 const CustomButton = (props:Props) => {
-    const {text,icon,variant,buttonStyle,fullWidth,sx,active} = props;
-
+    const {text,Icon,variant,buttonStyle,fullWidth,sx,active} = props;
+    console.log(props);
     const theme = useMantineTheme()
   return (
     <Button 
         style={buttonStyle && buttonStyle } 
         variant={variant }
         fullWidth={fullWidth ? true : false}
-        leftIcon={icon}
+        leftIcon={Icon}
         sx={{...sx,
             backgroundColor: active ? theme.colors.indigo[5] : '',
             color: active ? 'white' : '',
@@ -36,19 +36,19 @@ const CustomButton = (props:Props) => {
   )
 }
 
-const CustomUnstyledButton = ({text,icon,variant}) => {
-    return (
-        <UnstyledButton style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: '50%',
+// const CustomUnstyledButton = ({text,icon,variant}) => {
+//     return (
+//         <UnstyledButton style={{
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'center',
+//             borderRadius: '50%',
 
-        }}>
-            {text}
-        </UnstyledButton>
-    )
-}
+//         }}>
+//             {text}
+//         </UnstyledButton>
+//     )
+// }
 
 
-export  {CustomButton,CustomUnstyledButton}
+export  {CustomButton}

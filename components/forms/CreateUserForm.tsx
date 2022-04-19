@@ -1,5 +1,6 @@
 import { Anchor, Button, Group, NumberInput, PasswordInput, Select, TextInput } from '@mantine/core';
 import { useForm, useMediaQuery } from '@mantine/hooks';
+import { FC } from 'react';
 import AutoCompleteItem from '../select/CustomSelect';
 
 
@@ -9,8 +10,14 @@ import AutoCompleteItem from '../select/CustomSelect';
 //     onCancel(): void;
 //   }
 
+interface UserEditFormProps {
+    Form : any;
+    setForm : any;
+}
 
-const CreateUserForm = ({Form,setForm}) => {
+
+const CreateUserForm: FC<UserEditFormProps> = ({Form,setForm}) => {
+
         const isMobile = useMediaQuery('(max-width: 755px');
 
         const form = useForm({
@@ -103,7 +110,7 @@ const CreateUserForm = ({Form,setForm}) => {
         />
         <Select
             value={form.values.area}
-            onChange={(e) => form.setFieldValue('area', e)}
+            onChange={(event) => form.setFieldValue('area', event)}
             label="Escoge un área"
             placeholder="Áreas"
             itemComponent={AutoCompleteItem}
@@ -119,7 +126,7 @@ const CreateUserForm = ({Form,setForm}) => {
         />
         <Select
             value={form.values.rol}
-            onChange={(e) => form.setFieldValue('rol', e)}
+            onChange={(event) => form.setFieldValue('rol', event)}
             label="Escoge un rol para este usuario"
             placeholder="Roles"
             itemComponent={AutoCompleteItem}
@@ -135,7 +142,7 @@ const CreateUserForm = ({Form,setForm}) => {
         />
         <Select
             value={form.values.oficina}
-            onChange={(e) => form.setFieldValue('oficina', e)}
+            onChange={(event) => form.setFieldValue('oficina', event)}
             label="Escoge una oficina"
             placeholder="Oficinas"
             itemComponent={AutoCompleteItem}

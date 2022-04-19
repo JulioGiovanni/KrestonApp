@@ -11,46 +11,35 @@ import CustomAccordion from '../accordion/CustomAccordion'
 
 const Links = () => {
     const router = useRouter()
-
   return (
     <>            
-    {   
-        AdminLinks.map((link) => {
+        {   
+            AdminLinks.map((link) => {
             return(
-                <>
-                    {
-                        link.accordion ?
-                            <CustomAccordion
-                                key={link.link}
-                                icon={<link.icon/>}
-                                href={link.link}
-                                text={link.text}
-                                accordionLinks={link.accordionLinks}
-                                ComponentProps={link.ComponentProps}
-                                active={router.pathname === link.link ? true : false}
-                                passHref
-                            /> 
-                        :
-                            <CustomLink
-                                key={link.link}
-                                style={{}}
-                                href={link.link}
-                                Component={CustomButton}
-                                ComponentProps={link.ComponentProps}
-                                active={router.pathname === link.link ? true : false}
-                                passHref
-                            />  
-                    }
-                </>
-            )
-
-        })
-    }
-
-                        
-            
-
-
+                link.accordion ?
+                    <CustomAccordion
+                        key={link.link}
+                        icon={<link.icon/>}
+                        href={link.link}
+                        text={link.text}
+                        accordionLinks={link.accordionLinks}
+                        ComponentProps={link.ComponentProps}
+                        active={router.pathname === link.link ? true : false}
+                        passHref
+                    /> 
+                :
+                    <CustomLink
+                        key={link.link}
+                        style={{}}
+                        href={link.link}
+                        Component={CustomButton}
+                        ComponentProps={link.ComponentProps}
+                        active={router.pathname === link.link ? true : false}
+                        passHref
+                    />  
+                )
+            })
+        }
     </>
   )
 }

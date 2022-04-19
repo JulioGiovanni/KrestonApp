@@ -4,13 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import '../styles/globals.css';
 import CustomNavbar from '../components/layouts/navbar/navbar';
 
-
-
- 
-
-
-export default function App(props) {
-  const { Component, pageProps } = props;
+export default function App({ Component, pageProps }: AppProps){
   
   return (
     <>

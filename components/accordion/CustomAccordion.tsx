@@ -6,13 +6,13 @@ import CustomLink from '../links/CustomLink'
 
 
 interface Props {
-    ComponentProps, 
-    text, 
-    accordionLinks, 
-    active, 
-    href, 
-    passHref,
-    icon,
+    ComponentProps:any, 
+    text:string, 
+    accordionLinks:any, 
+    active:boolean, 
+    href:any, 
+    passHref:boolean,
+    icon:any,
 }
 
 const CustomAccordion: FC<Props> = (props) => {
@@ -36,13 +36,11 @@ const CustomAccordion: FC<Props> = (props) => {
                 icon:{color: theme.colors.blue[5], marginLeft: '0.5rem'},
                 item:{border: 'none'},
               
-                
-            
             }}
             disableIconRotation
         >
             <Accordion.Item label={text} color={theme.primaryColor}>
-                {props.accordionLinks.map((link) => {
+                {props.accordionLinks.map((link:any) => {
                     return(
                         <CustomLink
                             key={link.link}
@@ -51,7 +49,7 @@ const CustomAccordion: FC<Props> = (props) => {
                             ComponentProps={link.ComponentProps}
                             active={router.pathname === link.link ? true : false}
                             passHref
-                    />  
+                        />  
                     )
                 })}
             </Accordion.Item>

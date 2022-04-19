@@ -1,7 +1,16 @@
- import Link from "next/link"
+import { FC } from "react"
+import Link from "next/link"
 
+interface Props {
+    href: any
+    Component:any,
+    ComponentProps:any,
+    passHref:boolean,
+    active:boolean,
+    style?:any,
+}
 
-const CustomLink = ({href,Component,ComponentProps,passHref,active,style}) => {
+const CustomLink : FC<Props> = ({href,Component,ComponentProps,passHref,active,style}) => {
 
   
     return (

@@ -1,13 +1,14 @@
-import { AppShell, Burger, Container, Header, MediaQuery, Navbar,ScrollArea, Space, useMantineTheme } from "@mantine/core"
-import { useState } from "react"
+import { AppShell, Burger, Container, Header, MediaQuery, Navbar,ScrollArea, Space, Switch, useMantineTheme } from "@mantine/core"
+import { FC, useState } from "react"
 import Links from "../../links/Links"
+import { SwitchTheme } from "../../toogle/SwitchTheme"
 import Brand from "./brand/Brand"
 
 
 import MenuNavbar from "./menu-navbar/MenuNavbar"
 
 
-const CustomNavbar = ({children}) => {
+const CustomNavbar: FC = ({children}) => {
   const [opened, setOpened] = useState(false);
   const theme = useMantineTheme();
   return (
@@ -39,13 +40,13 @@ const CustomNavbar = ({children}) => {
             </Navbar.Section>
 
             <Navbar.Section
-            grow
-            component={ScrollArea}
-            ml={-10}
-            mr={-10}
-            sx={{ paddingLeft: 20, paddingRight: 20 }}
+                grow
+                component={ScrollArea}
+                ml={-10}
+                mr={-10}
+                sx={{ paddingLeft: 20, paddingRight: 20 }}
             >
-            <Links/>
+                <Links/>
             </Navbar.Section>
 
         </Navbar>
@@ -75,6 +76,7 @@ const CustomNavbar = ({children}) => {
             </MediaQuery>
             <Brand/>
             <MenuNavbar/>
+            {/* <SwitchTheme/> */}
             </div>
         </Header>
         }
