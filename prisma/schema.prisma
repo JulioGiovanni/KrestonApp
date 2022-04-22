@@ -24,14 +24,14 @@ model Usuario {
   rol               Role @relation(fields: [rolId], references: [id])
   rolId             Int
   activo            Boolean @default(value: true)
-  lastModifiedBy    String
+  lastModifiedBy    String?
   pregunta          Ticket[] @relation(name: "UsuarioPregunta")
   responder         Ticket[] @relation(name: "UsuarioRespuesta")
   proyectos         Proyecto[]
   comentarios       Comentario[]
   aceptaciones      Aceptacion[]
-  createdAt         DateTime
-  updatedAt         DateTime @updatedAt
+  createdAt         DateTime?
+  updatedAt         DateTime? @updatedAt
 }
 
 model Role {

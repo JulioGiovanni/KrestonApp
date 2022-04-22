@@ -3,20 +3,20 @@ import { FiPlus } from "react-icons/fi";
 import { Avatar, Button, Card, Grid, Space, Text, Title } from "@mantine/core";
 import Link from "next/link";
 import { useState } from "react";
+import { PrismaClient } from "@prisma/client";
 
 import ModalComponent from "../../components/modals/ModalComponent";
 import UserPopOverForm from '../../components/forms/PopOverForm';
-const areas = [
-    {nombre: 'Auditoría',   id: 1, oficina:'GDL'},
-    {nombre: 'Auditoría',   id: 2, oficina:'CDJ'},
-    {nombre: 'Impuestos',   id: 3, oficina:'GDL'},
-    {nombre: 'Impuestos',   id: 4, oficina:'CDJ'},
-    {nombre: 'Consultoría', id: 5, oficina:'GDL'},
-    {nombre: 'Consultoría', id: 6, oficina:'CDJ'},
-    {nombre: 'Contraloría', id: 7, oficina:'GDL'},
-    {nombre: 'Contraloría', id: 8, oficina:'CDJ'},
-]
-const index = () => {
+const prisma = new PrismaClient();
+export const getServerSideProps = async () => {
+
+    const areas = await prisma.area.findMany({
+    })
+    return { props:  {areas:JSON.parse(JSON.stringify(areas))}  }
+  }
+
+
+const index = ({areas}:any) => {
     const [openedModal, setOpenedModal] = useState(false)
   return (
     <>
@@ -47,9 +47,9 @@ const index = () => {
             <Space h={30}/>
 
         <Grid>
-            {areas.map((area) => {
+            {areas.map((area:any) => {
                 //Get the first letter of every word in the name
-                const initials = area.nombre.split(" ").map((word) => word[0]).join("");
+                const initials = area.nombre.split(" ").map((word:any) => word[0]).join("");
 
                 return(
                     <Grid.Col sm={12} md={6} lg={4}>

@@ -1,7 +1,7 @@
 import {Button,Group,TextInput,Anchor} from '@mantine/core';
 import { useForm, useMediaQuery } from '@mantine/hooks';
 
-const UserPopOverForm = ({ initialValues, onSubmit, onCancel }) => {
+const UserPopOverForm = ({ initialValues, onSubmit, onCancel }:any) => {
 
     const isMobile = useMediaQuery('(max-width: 755px');
 

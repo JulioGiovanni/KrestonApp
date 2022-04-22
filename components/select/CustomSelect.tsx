@@ -3,21 +3,21 @@ import { Avatar, Group,Text } from "@mantine/core";
 
 
 interface Props {
-  image,
-  label,
-  description,
+  image:any,
+  label:any,
+  nombre:string,
 }
 
 const AutoCompleteItem = forwardRef(
-    ({ image, label, description, ...others }: Props, ref:LegacyRef<HTMLDivElement>) => (
+    ({ image, label, nombre, ...others }: Props, ref:LegacyRef<HTMLDivElement>) => (
       <div ref={ref} {...others}>
         <Group noWrap>
           <Avatar src={image} />
   
           <div>
-            <Text>{label}</Text>
+            <Text>{nombre}</Text>
             <Text size="xs" color="dimmed">
-              {description}
+
             </Text>
           </div>
         </Group>

@@ -56,6 +56,20 @@ export const AdminLinks = [
         icon:  FiInfo ,
         accordion:true,
         accordionLinks:[
+
+            {link: '/consultas/crear',
+                ComponentProps:{ 
+                    text:' Crear',
+                    variant:"subtle",
+                    fullWidth: true,
+                    sx:{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        borderRadius: '50px',
+                        margin:'10px 0',
+                    }
+                }
+            },
             {link: '/consultas/aprobadas',
                 ComponentProps:{ 
                     text:' Aprobadas',
@@ -128,5 +142,38 @@ export const AdminLinks = [
             fullWidth: true
         }
     },
+    {   
+        link: '/oficinas',  
+        ComponentProps:{ 
+            sx:{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                borderRadius: '50px',
+                margin:'10px 0',
+            },
+            text: 'Oficinas',
+            Icon:  FiSquare ,
+            variant:"subtle",
+            fullWidth: true
+        }
+    },
+    {   
+        link: '/cuestionarios',  
+        ComponentProps:{ 
+            sx:{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                borderRadius: '50px',
+                margin:'10px 0',
+            },
+            text: 'Cuestionarios',
+            Icon:  FiSquare ,
+            variant:"subtle",
+            fullWidth: true
+        }
+    },
 
 ]
+
+export const UserLinks = [
+];

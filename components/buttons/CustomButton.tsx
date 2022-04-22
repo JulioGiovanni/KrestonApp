@@ -14,7 +14,6 @@ interface Props {
 
 const CustomButton = (props:Props) => {
     const {text,Icon,variant,buttonStyle,fullWidth,sx,active} = props;
-    console.log(props);
     const theme = useMantineTheme()
   return (
     <Button 
